@@ -31,7 +31,7 @@ int main(){
         char *cidadeMenor = cidadeMenorVizinhanca(arquivoEntrada);
         if (cidadeMenor != NULL) {
             printf("Cidade com menor vizinhanca: %s\n", cidadeMenor);
-            free(cidadeMenor); // Libera a memória alocada para o nome da cidade
+            free(cidadeMenor);
         } else {
             printf("Falha ao encontrar a cidade com menor vizinhanca.\n");
         }
@@ -41,7 +41,7 @@ int main(){
         free(estrada);
         
     } else {
-        printf("Falha ao carregar a estrada. (retorno NULL)\n");
+        printf("Falha ao carregar a estrada (retorno NULL)\n");
     }
 
     return 0;
