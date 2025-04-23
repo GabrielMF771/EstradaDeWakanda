@@ -48,7 +48,7 @@ Entrada (arquivo teste01.txt)
 
 Nesse caso, a vizinhança de Birnin Zana tem 6,5 km e a de Birnin S'Yan tem 3,5 km, conforme
 
-Par ao exemplo a seguir, as vizinhanças de Birnin S'Yan, Birnin Zana, K’pur e L’pur são, respetivamente, iguais a 6,0; 5,5; 5,0 e 3,5.
+Para o exemplo a seguir, as vizinhanças de Birnin S'Yan, Birnin Zana, K’pur e L’pur são, respetivamente, iguais a 6,0; 5,5; 5,0 e 3,5.
 
 ```
 Entrada (arquivo teste02.txt)
