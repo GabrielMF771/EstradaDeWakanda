@@ -24,7 +24,7 @@ char *cidadeMenorVizinhanca(const char *nomeArquivo); // Retorna a cidade que te
 
 ## Restrições
 
-* 3 ≤ T ≤ 106 e 2 ≤ N ≤ 104
+* 3 ≤ T ≤ 10⁶ e 2 ≤ N ≤ 10⁴
 * 0 < Xi < T, para 1 ≤ i ≤ N
 * Xi ≠ Xj, para todo par 1 ≤ i, j ≤ N.
 

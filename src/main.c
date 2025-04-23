@@ -5,24 +5,44 @@
 #include "cidades.h"
 
 int main(){
+    const char *arquivoEntrada = "src/teste02.txt";
+
     // Teste da função getEstrada
-    int Soma = 0;
-        int NumTeste = 0;
+    Estrada *estrada = getEstrada(arquivoEntrada);
 
-        FILE *Resposta = fopen("src/Resultado.txt", "w");
+    if (estrada != NULL) {
+        printf("Estrada carregada com sucesso!\n");
+        printf("Comprimento da Estrada (T): %d\nTotal de Cidades (N): %d\n\n", estrada->T, estrada->N);
+        
+        for (int i = 0; i < estrada->N; i++) {
+            printf("Cidade: %s, Posicao: %d\n", estrada->C[i].Nome, estrada->C[i].Posicao);
+        }
 
-        Estrada *T1 = getEstrada("src/teste01.txt");
-        double D1 = calcularMenorVizinhanca("src/teste01.txt");
-        char *C1 = cidadeMenorVizinhanca("src/teste01.txt");
+        // Teste da função calcularMenorVizinhanca
+        double menorVizinhanca = calcularMenorVizinhanca(arquivoEntrada);
 
-        if (T1->T == 10) Soma++;
-            NumTeste++;
-        if (T1->N == 2) Soma++;
-            NumTeste++;
-        if (D1 == 3.5) Soma++;
-            NumTeste++;
-        if (strcmp(C1, "Birnin Zana")==0) Soma++;
-            NumTeste++;
+        if (menorVizinhanca >= 0) {
+            printf("\nMenor vizinhanca: %.1f\n", menorVizinhanca);
+        } else {
+            printf("Falha ao calcular a menor vizinhanca.\n");
+        }
 
-        fprintf(Resposta, "\n\nATENÇÃO: Você acertou %d de %d itens. Logo, em 2.00 pontos, sua nota foi %.2f.\n", Soma, NumTeste, 2.0 * (float)Soma/(float)NumTeste);
+        // Teste da função cidadeMenorVizinhanca
+        char *cidadeMenor = cidadeMenorVizinhanca(arquivoEntrada);
+        if (cidadeMenor != NULL) {
+            printf("Cidade com menor vizinhanca: %s\n", cidadeMenor);
+            free(cidadeMenor); // Libera a memória alocada para o nome da cidade
+        } else {
+            printf("Falha ao encontrar a cidade com menor vizinhanca.\n");
+        }
+
+        // Libera a memória alocada para a estrada
+        free(estrada->C);
+        free(estrada);
+        
+    } else {
+        printf("Falha ao carregar a estrada. (retorno NULL)\n");
+    }
+
+    return 0;
 }
